@@ -163,6 +163,12 @@ condition:
   value_template: "{% raw %}{{ state_attr('device_tracker.iphone', 'battery') > 50 }}{% endraw %}"
 ```
 
+```yaml
+condition:
+  condition: template
+  value_template: "{% raw %}{{ not is_state('device_tracker.iphone', 'home') }}{% endraw %}"
+```
+
 Within an automation, template conditions also have access to the `trigger` variable as [described here][automation-templating].
 
 [template]: /topics/templating/
